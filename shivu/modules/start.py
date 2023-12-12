@@ -22,7 +22,7 @@ async def start(update: Update, context: CallbackContext) -> None:
         
         await collection.insert_one({"_id": user_id, "first_name": first_name, "username": username})
         
-        await context.bot.send_message(chat_id=GROUP_ID, text=f"<a href='tg://user?id={user_id}'>{first_name}</a> STARTED THE BOT", parse_mode='HTML')
+        await context.bot.send_message(chat_id=GROUP_ID, text=f"๏ <a href='tg://user?id={user_id}'>{first_name}</a> sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ", parse_mode='HTML')
     else:
         
         if user_data['first_name'] != first_name or user_data['username'] != username:
@@ -35,15 +35,15 @@ async def start(update: Update, context: CallbackContext) -> None:
         
         
         caption = f"""
-        ***Hey there! {update.effective_user.first_name} 🌻***
+        ***๏ ʜᴇʏ {update.effective_user.first_name}, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ᴜʜʜ !***
               
-***i Am Collect 'Em All Bot.\n\n I will send Random Characters in group after every 100 messages and who guessed that character's name Correct. \n\n I will add That Character in That user's Collection. \n\n Tap on help Button To See All Commands***
+***๏ ɪ'ᴍ ᴄʜᴀʀᴀᴄᴛᴇʀ ᴄᴏʟʟᴇᴄᴛ ʙᴏᴛ.\n\n๏ ɪ ᴡɪʟʟ sᴇɴᴅ ʀᴀɴᴅᴏᴍ ᴄʜᴀʀᴀᴄᴛᴇʀs ɪɴ ɢʀᴏᴜᴘ ᴀғᴛᴇʀ ᴇᴠᴇʀʏ 100 ᴍᴇssᴀɢᴇs ᴀɴᴅ ᴡʜᴏ ɢᴜᴇssᴇᴅ ᴛʜᴀᴛ ᴄʜᴀʀᴀᴄᴛᴇʀ's ɴᴀᴍᴇ ᴄᴏʀʀᴇᴄᴛ, ɪ ᴡɪʟʟ ᴀᴅᴅ ᴛʜᴀᴛ ᴄʜᴀʀᴀᴄᴛᴇʀ ɪɴ ᴛʜᴀᴛ ᴜsᴇʀ's ᴄᴏʟʟᴇᴄᴛɪᴏɴ. \n\n๏ ᴛᴀᴘ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴇᴇ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs.***
                """
         keyboard = [
-            [InlineKeyboardButton("Add Me", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
-            [InlineKeyboardButton("Update", url=f'https://t.me/{UPDATE_CHAT}'),
-             InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
-            [InlineKeyboardButton("Help", callback_data='help')],
+            [InlineKeyboardButton("↻ ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ↻", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
+            [InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ", url=f'https://t.me/{UPDATE_CHAT}'),
+             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f'https://t.me/{SUPPORT_CHAT}')],
+            [InlineKeyboardButton("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data='help')],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         photo_url = random.choice(PHOTO_URL)
@@ -54,13 +54,13 @@ async def start(update: Update, context: CallbackContext) -> None:
         photo_url = random.choice(PHOTO_URL)
         keyboard = [
             
-            [InlineKeyboardButton("Help", callback_data='help'),
-             InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
+            [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
+             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f'https://t.me/{SUPPORT_CHAT}')],
             
         ]
         
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_url, caption="I am alive",reply_markup=reply_markup )
+        await context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_url, caption="๏ ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !",reply_markup=reply_markup )
 
 async def button(update: Update, context: CallbackContext) -> None:
     query = update.callback_query
@@ -68,19 +68,19 @@ async def button(update: Update, context: CallbackContext) -> None:
 
     if query.data == 'help':
         help_text = """
-    ***Help Section :***
+    ***✦ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs sᴇᴄᴛɪᴏɴ ✦***
     
-***/guess: To Guess character (only works in group)***
-***/fav: Add Your fav***
-***/trade : To trade Characters***
-***/gift: Give any Character from Your Collection to another user.. (only works in groups)***
-***/collection: To see Your Collection***
-***/topgroups : See Top Groups.. Ppl Guesses Most in that Groups***
-***/top: Too See Top Users***
-***/ctop : Your ChatTop***
-***/changetime: Change Character appear time (only works in Groups)***
+***๏ /guess ➠ ᴛᴏ ɢᴜᴇss ᴄʜᴀʀᴀᴄᴛᴇʀ (ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘ).***
+***๏ /fav ➠ ᴀᴅᴅ ʏᴏᴜʀ ғᴀᴠʀᴀᴛᴇ.***
+***๏ /trade ➠ ᴛᴏ ᴛʀᴀᴅᴇ ᴄʜᴀʀᴀᴄᴛᴇʀs.***
+***๏ /gift ➠ ɢɪᴠᴇ ᴀɴʏ ᴄʜᴀʀᴀᴄᴛᴇʀ ғʀᴏᴍ ʏᴏᴜʀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ ᴛᴏ ᴀɴᴏᴛʜᴇʀ ᴜsᴇʀ (ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs).***
+***๏ /collection ➠ ᴛᴏ sᴇᴇ ʏᴏᴜʀ ᴄᴏʟʟᴇᴄᴛɪᴏɴ.***
+***๏ /topgroups ➠ sᴇᴇ ᴛᴏᴘ ɢʀᴏᴜᴘs, ᴘᴘʟ ɢᴜᴇssᴇs ᴍᴏsᴛ ɪɴ ᴛʜᴀᴛ ɢʀᴏᴜᴘs.***
+***๏ /top ➠ ᴛᴏᴏ sᴇᴇ ᴛᴏᴘ ᴜsᴇʀs.***
+***๏ /ctop ➠ ʏᴏᴜʀ ᴄʜᴀᴛ ᴛᴏᴘ.***
+***๏ /changetime ➠ ᴄʜᴀɴɢᴇ ᴄʜᴀʀᴀᴄᴛᴇʀ ᴀᴘᴘᴇᴀʀ ᴛɪᴍᴇ (ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs).***
    """
-        help_keyboard = [[InlineKeyboardButton("Back", callback_data='back')]]
+        help_keyboard = [[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data='back')]]
         reply_markup = InlineKeyboardMarkup(help_keyboard)
         
         await context.bot.edit_message_caption(chat_id=update.effective_chat.id, message_id=query.message.message_id, caption=help_text, reply_markup=reply_markup, parse_mode='markdown')
@@ -88,15 +88,15 @@ async def button(update: Update, context: CallbackContext) -> None:
     elif query.data == 'back':
 
         caption = f"""
-        ***Hey there! {update.effective_user.first_name}*** 🌻
+        ***๏ ʜᴇʏ {update.effective_user.first_name}, ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ᴜʜʜ !*** 
         
-***i Am Collect 'Em All Bot.. Add Me in You're Group And I will send Random Characters in group after every 100 messages and who guessed that character's name Correct.. I will add That Character in That user's Collection.. Tap on help Button To See All Commands***
+***๏ ɪ ᴀᴍ ᴄʜᴀʀᴀᴄᴛᴇʀ ᴄᴏʟʟᴇᴄᴛ ʙᴏᴛ.\n\n๏ ɪ ᴡɪʟʟ sᴇɴᴅ ʀᴀɴᴅᴏᴍ ᴄʜᴀʀᴀᴄᴛᴇʀs ɪɴ ɢʀᴏᴜᴘ ᴀғᴛᴇʀ ᴇᴠᴇʀʏ 100 ᴍᴇssᴀɢᴇs ᴀɴᴅ ᴡʜᴏ ɢᴜᴇssᴇᴅ ᴛʜᴀᴛ ᴄʜᴀʀᴀᴄᴛᴇʀ's ɴᴀᴍᴇ ᴄᴏʀʀᴇᴄᴛ, ɪ ᴡɪʟʟ ᴀᴅᴅ ᴛʜᴀᴛ ᴄʜᴀʀᴀᴄᴛᴇʀ ɪɴ ᴛʜᴀᴛ ᴜsᴇʀ's ᴄᴏʟʟᴇᴄᴛɪᴏɴ. \n\n๏ ᴛᴀᴘ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ sᴇᴇ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs.***
         """
         keyboard = [
-            [InlineKeyboardButton("Add Me", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
-            [InlineKeyboardButton("Update", url=f'https://t.me/{UPDATE_CHAT}'),
-             InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
-            [InlineKeyboardButton("Help", callback_data='help')],
+            [InlineKeyboardButton("↻ ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ↻", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
+            [InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇ", url=f'https://t.me/{UPDATE_CHAT}'),
+             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f'https://t.me/{SUPPORT_CHAT}')],
+            [InlineKeyboardButton("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs", callback_data='help')],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
