@@ -41,9 +41,9 @@ async def start(update: Update, context: CallbackContext) -> None:
                """
         keyboard = [
             [InlineKeyboardButton("Add Me", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
-            [InlineKeyboardButton("Help", callback_data='help'),
+            [InlineKeyboardButton("Update"' utl=f'https://t.me/{UPDATE_CHAT}'),
              InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
-            [InlineKeyboardButton("Updates", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("Help", callback_data='help')],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         photo_url = random.choice(PHOTO_URL)
@@ -94,9 +94,9 @@ async def button(update: Update, context: CallbackContext) -> None:
         """
         keyboard = [
             [InlineKeyboardButton("Add Me", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
-            [InlineKeyboardButton("Help", callback_data='help'),
+            [InlineKeyboardButton("Update", url=f'https://t.me/{UPDATE_CHAT}'),
              InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
-            [InlineKeyboardButton("Updates", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("Help", callback_data='help')],
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
