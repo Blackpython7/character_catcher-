@@ -41,7 +41,7 @@ async def start(update: Update, context: CallbackContext) -> None:
                """
         keyboard = [
             [InlineKeyboardButton("Add Me", url=f'http://t.me/Collect_emAll_Bot?startgroup=new')],
-            [InlineKeyboardButton("Update"' url=f'https://t.me/{UPDATE_CHAT}'),
+            [InlineKeyboardButton("Update", url=f'https://t.me/{UPDATE_CHAT}'),
              InlineKeyboardButton("Support", url=f'https://t.me/{SUPPORT_CHAT}')],
             [InlineKeyboardButton("Help", callback_data='help')],
         ]
